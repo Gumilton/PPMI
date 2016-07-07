@@ -24,6 +24,9 @@ def main():
     elif args.model == "predictor":
         predictor.Predictor()
 
+    else:
+        raise ("Unsuccessful call!")
+
 
 
 
