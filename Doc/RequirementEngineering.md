@@ -4,7 +4,7 @@
 
 2. Main access point provides argument type --model to specify to choose modeler or predictor.
 
-3. Accept list-type input data: adjacency list.
+3. Accept list-type input data: adjacency list. MAF format. First column is sample ID and second column is Mutation.
 
 4. Functional module convert between adjacency list and adjacency matrix.
 
