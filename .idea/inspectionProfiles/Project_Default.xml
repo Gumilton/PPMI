@@ -5,6 +5,7 @@
       <option name="ignoredIdentifiers">
         <list>
           <option value="predictor" />
+          <option value="src.main.model" />
         </list>
       </option>
     </inspection_tool>

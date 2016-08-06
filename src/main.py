@@ -1,6 +1,8 @@
+
+
 import argparse
-import model
 import predictor
+import buildModel
 
 def main():
 
@@ -19,7 +21,7 @@ def main():
     print(args.model)
 
     if args.model == "modeler":
-        model.Model()
+        buildModel.Model()
 
     elif args.model == "predictor":
         predictor.Predictor()
