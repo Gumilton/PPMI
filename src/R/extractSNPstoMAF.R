@@ -1,4 +1,4 @@
-tmp <- commandArgs(trailingOnly = T)
+tmp <- commandArgs(trailingOnly = T)#only arguments after --args be returned
 dir <- tmp[1]#working directory
 vcf <- tmp[2]#vcf file name
 outputPrefix <- tmp[3]#output file prefix
