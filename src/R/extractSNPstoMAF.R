@@ -36,7 +36,7 @@ SNP <- lapply(1:length(samples), function(i, vcf, mode){
     SNP = SNP[which(as.character(mcols(SNP)$REFAA) != as.character(mcols(SNP)$VARAA))]#keep aa-change SNP
   }
   VAR = data.frame(Chrom=as.character(seqnames(SNP)), Position=start(SNP),
-                   Ref=as.data.frame(mcols(SNP))$REF, Alt=as.data.frame(mcols(SNP))$ALT,
+                   Ref=as.data.frame(SNP@fixed@listData)$REF, Alt=as.data.frame(SNP@fixed@listData)$ALT.value,
                    Gene=as.data.frame(mcols(SNP))$GENEID, Patient=samples[i])
   VAR = VAR[!duplicated(VAR), ]
   VAR
