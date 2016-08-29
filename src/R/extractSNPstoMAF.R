@@ -1,7 +1,12 @@
-tmp <- commandArgs(TRUE)
-dir <- tmp[1]#working directory
-vcf <- tmp[2]#vcf file name
-outputPrefix <- tmp[3]#output file prefix
+args <- commandArgs(trailingOnly = F)
+dir <- args[grep("--dir=", args)]
+dir <- substr(dir, 7, nchar(dir))#working directory
+vcf <- args[grep("--vcf=", args)]
+vcf <- substr(vcf, 7, nchar(vcf))#vcf file name
+outputPrefix <- args[grep("--outputPrefix=", args)]
+outputPrefix <- substr(outputPrefix, 16, nchar(outputPrefix))#output file prefix
+#sample command line:
+#R CMD BATCH --dir=/working/directory/ --vcf=test.vcf --outputPrefix=prefix extractSNPstoMAF.R.R
 
 library(TxDb.Hsapiens.UCSC.hg19.knownGene)
 library(BSgenome.Hsapiens.UCSC.hg19)
