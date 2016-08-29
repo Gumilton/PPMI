@@ -1,3 +1,4 @@
+
 args <- commandArgs(trailingOnly = F) 
 dir <- args[grep("--dir=", args)] 
 dir <- substr(dir, 7, nchar(dir))#working directory
@@ -13,6 +14,7 @@ outputPrefix <- substr(outputPrefix, 16, nchar(outputPrefix))#output file prefix
 print(outputPrefix)
 #sample command line: 
 #R CMD BATCH --dir=/working/directory/ --vcf=test.vcf --outputPrefix=prefix --SNP=A extractSNPstoMAF.R
+
 
 
 library(VariantAnnotation)
