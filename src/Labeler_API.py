@@ -5,7 +5,8 @@ Created on Wed Aug 31 02:16:22 2016
 @author: JH Sun
 """
 # Different Matrices with 100 feature dimensions preprocessed with differet ways will be passed to you.
-# You may subset it with the first several features (eg. 10 or 30 or 50) locally before passing it to the Labeler.
+# You may subset it with the first (Because the more important the feature is, the smaller its index will be) 
+#   several features (eg. 10 or 30 or 50) locally before passing it to the Labeler.
 # If you do so, please keep it the same format as the .txt file passed to you originally.
 
 def Learner(Matrix):    # Matrix is a numpy.ndarray, dtype = float, shape = (PatientNum, FeatureNum).
