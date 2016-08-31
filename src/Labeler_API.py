@@ -30,9 +30,11 @@ def Labeler(Learner, MatrixAddress):    # MatrixAddress is the address of reduct
     PatientNum = Matrix.shape[0]
     FeatureNum = Matrix.shape[1]
     
+    SliceNum = FeatureNum   # May be changed to subset features!
+    Matrix = Matrix[:,0:SliceNum]
     Labels = Learner(Matrix)
     
-    with open(Learner.__name__ + "_extra information_" + ".txt","w") as f:
+    with open(Learner.__name__ + "_" + "extra information" + "_" + "slice" + str(SliceNum) + ".txt","w") as f:
         for i in xrange(len(Labels)):
             f.write(str(Labels[i][0]))
             f.write('\t')
