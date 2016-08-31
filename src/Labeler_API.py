@@ -34,7 +34,8 @@ def Labeler(Learner, MatrixAddress):    # MatrixAddress is the address of reduct
     Matrix = Matrix[:,0:SliceNum]
     Labels = Learner(Matrix)
     
-    with open(Learner.__name__ + "_" + "extra information" + "_" + "slice" + str(SliceNum) + ".txt","w") as f:
+    extra_information = "-"     # Necessary extra information for labeling and clustering, such as clustering parameters, etc.
+    with open(Learner.__name__ + "_" + extra_information + "_" + "slice" + str(SliceNum) + ".txt","w") as f:
         for i in xrange(len(Labels)):
             f.write(str(Labels[i][0]))
             f.write('\t')
