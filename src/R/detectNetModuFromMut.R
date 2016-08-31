@@ -11,9 +11,9 @@ print(method)
 outputPrefix <- args[grep("--outputPrefix=", args)] 
 outputPrefix <- substr(outputPrefix, 16, nchar(outputPrefix))#output file prefix
 print(outputPrefix)
-# plot <- args[grep("--plot=", args)] 
-# plot <- substr(plot, 8, nchar(plot))#plot option
-# print(plot)
+plot <- args[grep("--plot=", args)] 
+plot <- substr(plot, 8, nchar(plot))#plot option
+print(plot)
 #sample command line: 
 #R CMD BATCH --dir=/working/directory/ --maf=test.maf --outputPrefix=prefix --plot=T extractSNPstoMAF.R
 
@@ -33,24 +33,24 @@ modularity <- function(x, method){
 mod <- modularity(bipartite, method)
 save(bipartite, mod, file = paste(dir, outputPrefix, ".rda", sep = ""))
 #determine modularity
-# if (plot){
-#   pdf(paste(dir, outputPrefix, "Bipartite.pdf", sep = ""), width = 50, height = 50)
-#   keyMutation = c()
-#   vertexColor <- mod$membership
-#   vertexColor[match(keyMutation, mod$names)] <- "Red"
-#   vertexSize <- rep(5, length(mod$names))
-#   vertexSize[match(keyMutation, mod$names)] <- 15
-#   vertexSize[grep("PPMI", mod$names)] <- 10
-#   vertexShape <- rep("circle", length(mod$names))
-#   vertexShape[match(keyMutation, mod$names)] <- "square"
-#   vertexLabel <- character(length(mod$names))
-#   vertexLabel[match(keyMutation, mod$names)] <- keyMutation
-#   plot.igraph(bipartite, vertex.color = vertexColor, vertex.frame.color = NA,
-#               vertex.size = vertexSize, vertex.shape = vertexShape, vertex.label.cex = 1,
-#               vertex.label = vertexLabel, main = method)
-#   legend("topleft", legend = c("patient", "mut", "keyMut"), pch = c(19, 20, 15), border = NA, bty = "n")
-#   dev.off()
-# }
+if (plot){
+ pdf(paste(dir, outputPrefix, "Bipartite.pdf", sep = ""), width = 50, height = 50)
+ keyMutation = c()
+ vertexColor <- mod$membership
+ vertexColor[match(keyMutation, mod$names)] <- "Red"
+ vertexSize <- rep(5, length(mod$names))
+ vertexSize[match(keyMutation, mod$names)] <- 15
+ vertexSize[grep("PPMI", mod$names)] <- 10
+ vertexShape <- rep("circle", length(mod$names))
+ vertexShape[match(keyMutation, mod$names)] <- "square"
+ vertexLabel <- character(length(mod$names))
+ vertexLabel[match(keyMutation, mod$names)] <- keyMutation
+ plot.igraph(bipartite, vertex.color = vertexColor, vertex.frame.color = NA,
+             vertex.size = vertexSize, vertex.shape = vertexShape, vertex.label.cex = 1,
+             vertex.label = vertexLabel, main = method)
+ legend("topleft", legend = c("patient", "mut", "keyMut"), pch = c(19, 20, 15), border = NA, bty = "n")
+ dev.off()
+}
 #plot bipartite graph
 
 ########
