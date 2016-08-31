@@ -32,7 +32,7 @@ def Labeler(Learner, MatrixAddress):    # MatrixAddress is the address of reduct
     
     Labels = Learner(Matrix)
     
-    with open("LabelerName.txt","w") as f:
+    with open(Learner.__name__ + "_extra information_" + ".txt","w") as f:
         for i in xrange(len(Labels)):
             f.write(str(Labels[i][0]))
             f.write('\t')
