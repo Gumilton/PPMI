@@ -35,16 +35,16 @@ save(bipartite, mod, file = paste(dir, outputPrefix, ".rda", sep = ""))
 #determine modularity
 if (plot){
  pdf(paste(dir, outputPrefix, "Bipartite.pdf", sep = ""), width = 50, height = 50)
- keyMutation = c()
+ keyMutation = c()#define subtype-feature mutations
  vertexColor <- mod$membership
- vertexColor[match(keyMutation, mod$names)] <- "Red"
+ vertexColor[match(keyMutation, mod$names)] <- "Red"#color according to subtypes, keyMutation in red
  vertexSize <- rep(5, length(mod$names))
  vertexSize[match(keyMutation, mod$names)] <- 15
- vertexSize[grep("PPMI", mod$names)] <- 10
+ vertexSize[grep("PPMI", mod$names)] <- 10#size, keyMutation > patient > mutation
  vertexShape <- rep("circle", length(mod$names))
- vertexShape[match(keyMutation, mod$names)] <- "square"
+ vertexShape[match(keyMutation, mod$names)] <- "square"#shape, keyMutation in suqare, anything else in circle
  vertexLabel <- character(length(mod$names))
- vertexLabel[match(keyMutation, mod$names)] <- keyMutation
+ vertexLabel[match(keyMutation, mod$names)] <- keyMutation#only label keyMutation
  plot.igraph(bipartite, vertex.color = vertexColor, vertex.frame.color = NA,
              vertex.size = vertexSize, vertex.shape = vertexShape, vertex.label.cex = 1,
              vertex.label = vertexLabel, main = method)
