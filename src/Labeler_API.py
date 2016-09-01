@@ -26,7 +26,11 @@ def LabelReader(LabelsAddress):
         Labels[i] = [float(j) for j in Labels[i]]
 
     Labels = np.array(Labels)  
-
+def tinker(Matrix):
+    TinkerSet = (356, 421)
+    #TinkerSet = ()
+    Matrix = np.delete(Matrix, TinkerSet, axis = 0)
+    return Matrix
 def MatrixReader(MatrixAddress):
     import numpy as np    
     with open(MatrixAddress, 'r') as f:
@@ -37,6 +41,7 @@ def MatrixReader(MatrixAddress):
         Matrix[i] = [float(j) for j in Matrix[i]]
 
     Matrix = np.array(Matrix)
+    #Matrix = tinker(Matrix)
     return Matrix
     
 def Learner(Matrix):    # Matrix is a numpy.ndarray, dtype = float, shape = (PatientNum, FeatureNum).
