@@ -1,0 +1,348 @@
+
+APResult object
+
+Number of samples     =  645 
+Number of iterations  =  197 
+Input preference      =  0.9561555 
+Sum of similarities   =  485.9764 
+Sum of preferences    =  147.2479 
+Net similarity        =  633.2243 
+Number of clusters    =  154 
+
+Exemplars:
+   5 21 23 24 29 32 35 36 48 51 52 55 63 72 74 76 77 82 93 94 97 102 111 112 
+   126 128 133 134 137 138 140 144 146 147 149 150 152 153 156 160 162 166 168 
+   170 172 188 193 196 200 204 208 211 225 230 235 238 240 241 242 245 248 252 
+   265 266 267 268 269 270 271 283 286 292 304 322 325 326 327 335 337 338 339 
+   345 347 348 350 351 357 362 363 367 370 371 373 374 388 390 391 393 396 400 
+   403 411 414 416 419 420 421 422 423 424 429 431 434 450 452 457 463 464 471 
+   484 485 488 491 495 502 510 513 514 517 518 521 522 523 526 535 537 546 549 
+   554 555 560 581 582 583 584 589 613 624 625 628 632 634 637 638
+Clusters:
+   Cluster 1, exemplar 5:
+      5
+   Cluster 2, exemplar 21:
+      21
+   Cluster 3, exemplar 23:
+      23 643
+   Cluster 4, exemplar 24:
+      24
+   Cluster 5, exemplar 29:
+      29
+   Cluster 6, exemplar 32:
+      32
+   Cluster 7, exemplar 35:
+      35
+   Cluster 8, exemplar 36:
+      36
+   Cluster 9, exemplar 48:
+      48
+   Cluster 10, exemplar 51:
+      51
+   Cluster 11, exemplar 52:
+      52
+   Cluster 12, exemplar 55:
+      2 6 12 18 19 25 38 55 57 61 67 70 107 135 176 195 201 202 228 234 236 249 
+      256 257 274 275 287 298 299 315 318 328 356 364 366 382 383 399 404 407 
+      417 454 469 492 497 504 512 547 548 603 606 610 612 622 641 642
+   Cluster 13, exemplar 63:
+      63
+   Cluster 14, exemplar 72:
+      72
+   Cluster 15, exemplar 74:
+      74
+   Cluster 16, exemplar 76:
+      76
+   Cluster 17, exemplar 77:
+      77
+   Cluster 18, exemplar 82:
+      82
+   Cluster 19, exemplar 93:
+      93
+   Cluster 20, exemplar 94:
+      94
+   Cluster 21, exemplar 97:
+      97
+   Cluster 22, exemplar 102:
+      102 224 375 409
+   Cluster 23, exemplar 111:
+      111
+   Cluster 24, exemplar 112:
+      112
+   Cluster 25, exemplar 126:
+      126
+   Cluster 26, exemplar 128:
+      128
+   Cluster 27, exemplar 133:
+      133
+   Cluster 28, exemplar 134:
+      134
+   Cluster 29, exemplar 137:
+      137
+   Cluster 30, exemplar 138:
+      138
+   Cluster 31, exemplar 140:
+      140
+   Cluster 32, exemplar 144:
+      144
+   Cluster 33, exemplar 146:
+      146
+   Cluster 34, exemplar 147:
+      147
+   Cluster 35, exemplar 149:
+      149
+   Cluster 36, exemplar 150:
+      150
+   Cluster 37, exemplar 152:
+      152
+   Cluster 38, exemplar 153:
+      153
+   Cluster 39, exemplar 156:
+      156
+   Cluster 40, exemplar 160:
+      160
+   Cluster 41, exemplar 162:
+      162 349 369 386 402 587
+   Cluster 42, exemplar 166:
+      166
+   Cluster 43, exemplar 168:
+      168
+   Cluster 44, exemplar 170:
+      170
+   Cluster 45, exemplar 172:
+      172
+   Cluster 46, exemplar 188:
+      188
+   Cluster 47, exemplar 193:
+      193
+   Cluster 48, exemplar 196:
+      196
+   Cluster 49, exemplar 200:
+      59 86 88 199 200 397 398 405 412 588 597 598 614 631
+   Cluster 50, exemplar 204:
+      65 68 115 204 210 406 446 461 467 544 556 591
+   Cluster 51, exemplar 208:
+      42 60 66 127 130 131 161 198 208 243 253 254 258 262 263 288 300 316 319 
+      321 324 346 352 360 376 392 401 436 465 468 475 486 498 516 545 590 595 
+      600 605
+   Cluster 52, exemplar 211:
+      211
+   Cluster 53, exemplar 225:
+      9 27 39 46 64 75 99 114 139 165 187 207 222 223 225 226 354 428 449 474 
+      506 511 525 529 531 539 551 559 566 578 639
+   Cluster 54, exemplar 230:
+      11 13 14 53 95 108 123 154 177 179 180 190 197 214 229 230 247 302 303 
+      310 334 340 344 358 433 451 473 476 483 494 515 564 609 615 620
+   Cluster 55, exemplar 235:
+      235
+   Cluster 56, exemplar 238:
+      238
+   Cluster 57, exemplar 240:
+      91 163 240 520 530 536
+   Cluster 58, exemplar 241:
+      241
+   Cluster 59, exemplar 242:
+      242
+   Cluster 60, exemplar 245:
+      245
+   Cluster 61, exemplar 248:
+      248
+   Cluster 62, exemplar 252:
+      252
+   Cluster 63, exemplar 265:
+      22 33 54 58 87 103 124 125 148 151 173 209 250 265 272 278 281 296 306 
+      317 330 336 353 365 394 413 470 493 508 534 579 585 592 599 604 619
+   Cluster 64, exemplar 266:
+      266
+   Cluster 65, exemplar 267:
+      267
+   Cluster 66, exemplar 268:
+      268
+   Cluster 67, exemplar 269:
+      269
+   Cluster 68, exemplar 270:
+      270
+   Cluster 69, exemplar 271:
+      271
+   Cluster 70, exemplar 283:
+      283
+   Cluster 71, exemplar 286:
+      286
+   Cluster 72, exemplar 292:
+      292
+   Cluster 73, exemplar 304:
+      304
+   Cluster 74, exemplar 322:
+      322
+   Cluster 75, exemplar 325:
+      325
+   Cluster 76, exemplar 326:
+      326
+   Cluster 77, exemplar 327:
+      327
+   Cluster 78, exemplar 335:
+      335
+   Cluster 79, exemplar 337:
+      337
+   Cluster 80, exemplar 338:
+      338
+   Cluster 81, exemplar 339:
+      7 20 81 113 158 159 206 237 277 293 294 309 313 314 329 331 339 341 379 
+      415 425 432 438 443 444 453 478 500 528 543 552 567 573 593 594 596 602 
+      607 617
+   Cluster 82, exemplar 345:
+      345
+   Cluster 83, exemplar 347:
+      347
+   Cluster 84, exemplar 348:
+      348
+   Cluster 85, exemplar 350:
+      350
+   Cluster 86, exemplar 351:
+      351
+   Cluster 87, exemplar 357:
+      357
+   Cluster 88, exemplar 362:
+      362
+   Cluster 89, exemplar 363:
+      1 15 17 30 34 56 71 83 89 100 105 116 119 120 143 157 194 212 217 220 255 
+      261 273 276 280 285 289 291 295 301 305 308 311 312 320 323 333 363 384 
+      385 418 435 440 441 447 458 477 479 489 509 540 542 565 571 572 574 580 
+      586 601 608 621 627
+   Cluster 90, exemplar 367:
+      367
+   Cluster 91, exemplar 370:
+      370
+   Cluster 92, exemplar 371:
+      371
+   Cluster 93, exemplar 373:
+      373
+   Cluster 94, exemplar 374:
+      374
+   Cluster 95, exemplar 388:
+      388
+   Cluster 96, exemplar 390:
+      390
+   Cluster 97, exemplar 391:
+      391
+   Cluster 98, exemplar 393:
+      393
+   Cluster 99, exemplar 396:
+      396
+   Cluster 100, exemplar 400:
+      400
+   Cluster 101, exemplar 403:
+      403
+   Cluster 102, exemplar 411:
+      411
+   Cluster 103, exemplar 414:
+      414
+   Cluster 104, exemplar 416:
+      416
+   Cluster 105, exemplar 419:
+      419
+   Cluster 106, exemplar 420:
+      420
+   Cluster 107, exemplar 421:
+      421
+   Cluster 108, exemplar 422:
+      422
+   Cluster 109, exemplar 423:
+      423
+   Cluster 110, exemplar 424:
+      424
+   Cluster 111, exemplar 429:
+      429
+   Cluster 112, exemplar 431:
+      431
+   Cluster 113, exemplar 434:
+      434
+   Cluster 114, exemplar 450:
+      450
+   Cluster 115, exemplar 452:
+      452
+   Cluster 116, exemplar 457:
+      457
+   Cluster 117, exemplar 463:
+      463
+   Cluster 118, exemplar 464:
+      464
+   Cluster 119, exemplar 471:
+      471
+   Cluster 120, exemplar 484:
+      484
+   Cluster 121, exemplar 485:
+      485
+   Cluster 122, exemplar 488:
+      488
+   Cluster 123, exemplar 491:
+      491
+   Cluster 124, exemplar 495:
+      495
+   Cluster 125, exemplar 502:
+      502
+   Cluster 126, exemplar 510:
+      510
+   Cluster 127, exemplar 513:
+      513
+   Cluster 128, exemplar 514:
+      514
+   Cluster 129, exemplar 517:
+      10 28 43 44 47 50 62 69 85 106 110 129 136 142 145 155 169 191 192 215 
+      231 232 239 244 259 290 342 377 380 381 387 389 426 430 437 442 455 456 
+      466 472 481 501 517 519 533 538 541 550 553 562 563 568 569 570 576 577 
+      626
+   Cluster 130, exemplar 518:
+      8 26 41 45 49 79 92 96 98 101 104 117 118 132 141 164 171 174 182 183 184 
+      185 186 189 203 205 227 233 246 260 359 361 378 439 445 448 459 460 480 
+      482 487 490 503 505 507 518 524 532 557 558 575 611 616
+   Cluster 131, exemplar 521:
+      521
+   Cluster 132, exemplar 522:
+      522
+   Cluster 133, exemplar 523:
+      523
+   Cluster 134, exemplar 526:
+      526
+   Cluster 135, exemplar 535:
+      535
+   Cluster 136, exemplar 537:
+      537
+   Cluster 137, exemplar 546:
+      546
+   Cluster 138, exemplar 549:
+      549
+   Cluster 139, exemplar 554:
+      554
+   Cluster 140, exemplar 555:
+      555
+   Cluster 141, exemplar 560:
+      560
+   Cluster 142, exemplar 581:
+      581
+   Cluster 143, exemplar 582:
+      582
+   Cluster 144, exemplar 583:
+      583
+   Cluster 145, exemplar 584:
+      584
+   Cluster 146, exemplar 589:
+      589
+   Cluster 147, exemplar 613:
+      613
+   Cluster 148, exemplar 624:
+      3 4 16 31 37 40 73 78 80 84 90 121 122 167 175 178 181 213 216 218 221 
+      251 264 279 282 284 297 307 332 355 368 372 408 410 427 462 496 499 527 
+      561 618 623 624 629 630 633 635 636 640
+   Cluster 149, exemplar 625:
+      625
+   Cluster 150, exemplar 628:
+      109 219 343 395 628 644 645
+   Cluster 151, exemplar 632:
+      632
+   Cluster 152, exemplar 634:
+      634
+   Cluster 153, exemplar 637:
+      637
+   Cluster 154, exemplar 638:
+      638
