@@ -31,6 +31,7 @@ def tinker(Matrix):
     #TinkerSet = ()
     Matrix = np.delete(Matrix, TinkerSet, axis = 0)
     return Matrix
+
 def MatrixReader(MatrixAddress):
     import numpy as np    
     with open(MatrixAddress, 'r') as f:
@@ -44,14 +45,17 @@ def MatrixReader(MatrixAddress):
     #Matrix = tinker(Matrix)
     return Matrix
     
-def Learner(Matrix):    # Matrix is a numpy.ndarray, dtype = float, shape = (PatientNum, FeatureNum).
+def Learner(Matrix, option = ""):    # Matrix is a numpy.ndarray, dtype = float, shape = (PatientNum, FeatureNum).
     import numpy as np
-    import sklearn.cluster as cluster 
+    import sklearn.cluster as cluster
+    from sklearn.cluster import AgglomerativeClustering
     
     # Parameters
     #
     #
-
+    linkages = ['ward', 'average', 'complete']
+    clustering = AgglomerativeClustering(linkage=linkages[1], n_clusters=4)
+    clustering.fit(Matrix[:,0:4])
     """
          We may encounter outlier issues. In this case, the outliers that may be put aside will be labeled 0.
          Labels  is a numpy.ndarray,shape = (PatientNum, 2), dtype = int. label = (0),1,2,3,...Patient ID = 0,1,2,3,...
@@ -60,7 +64,7 @@ def Learner(Matrix):    # Matrix is a numpy.ndarray, dtype = float, shape = (Pat
     PatientNum = Matrix.shape[0]
     FeatureNum = Matrix.shape[1]
 
-    return None
+    return np.asarray(zip(range(len(clustering.labels_)),clustering.labels_))
 
 def Visualization(MatrixAddress, Learner, Labels, dim):     #dim = 2 or 3
     """
@@ -80,12 +84,13 @@ def Visualization(MatrixAddress, Learner, Labels, dim):     #dim = 2 or 3
         fig = plt.figure()
         plt.scatter(Matrix[:,0], Matrix[:,1], s=s, c=Labels[:,1]/float(Labels[:,1].max()), marker='o', cmap='prism', norm=None, vmin=None, vmax=None, alpha=alpha, linewidths=None, verts=None, edgecolors=None, hold=None, data=None)
 #        plt.savefig('test.png', dpi=200,)        
-        
+        plt.show()
+
     elif dim == 3:
         fig = plt.figure()
         ax = fig.add_subplot(111, projection='3d')
         ax.scatter(Matrix[:,0], Matrix[:,1], Matrix[:,2], s = s, c=Labels[:,1]/float(Labels[:,1].max()), marker='o', cmap='prism', norm=None, vmin=None, vmax=None, alpha=alpha)
-
+        plt.show()
 
 def Labeler(Learner, MatrixAddress):    # MatrixAddress is the address of reducted feature matrix .txt file
     Matrix = MatrixReader(MatrixAddress)    
@@ -95,7 +100,7 @@ def Labeler(Learner, MatrixAddress):    # MatrixAddress is the address of reduct
     SliceNum = FeatureNum   # May be changed to subset features!
     Matrix = Matrix[:,0:SliceNum]
     Labels = Learner(Matrix)
-    
+    # print(Labels)
     extra_information = "-"     # Necessary extra information for labeling and clustering, such as clustering parameters, etc.
     with open(Learner.__name__ + "_" + extra_information + "_" + "slice" + str(SliceNum) + ".txt","w") as f:
         for i in xrange(len(Labels)):
@@ -107,7 +112,7 @@ def Labeler(Learner, MatrixAddress):    # MatrixAddress is the address of reduct
 
    
 if __name__ == "__main__":
-    MatrixAddress = "Your .txt Matrix Address"
+    MatrixAddress = "../Mat_Mannual_1_645_100.txt"
     Labels = Labeler(Learner, MatrixAddress)
     Visualization(MatrixAddress, Learner, Labels, 2)
 
