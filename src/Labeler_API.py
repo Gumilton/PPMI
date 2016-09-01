@@ -17,7 +17,9 @@ import scipy
 import sklearn
 from sklearn.cluster import AgglomerativeClustering
 
-
+def outlier_handler():
+# for combine learner labels and outlier labels
+    pass
 
 def LabelReader(LabelsAddress):
     with open(LabelsAddress, 'r') as f:
