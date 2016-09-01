@@ -51,16 +51,16 @@ def Learner(Matrix):    # Matrix is a numpy.ndarray, dtype = float, shape = (Pat
     # Parameters
     #
     #
-    
+
+    """
+         We may encounter outlier issues. In this case, the outliers that may be put aside will be labeled 0.
+         Labels  is a numpy.ndarray,shape = (PatientNum, 2), dtype = int. label = (0),1,2,3,...Patient ID = 0,1,2,3,...
+         e.g Labels = np.array([[0, 1], [1, 2], [2, 2], ...])
+    """
     PatientNum = Matrix.shape[0]
     FeatureNum = Matrix.shape[1]
-    
-"""    
-     We may encounter outlier issues. In this case, the outliers that may be put aside will be labeled 0.
-     Labels  is a numpy.ndarray,shape = (PatientNum, 2), dtype = int. label = (0),1,2,3,...Patient ID = 0,1,2,3,...
-     e.g Labels = np.array([[0, 1], [1, 2], [2, 2], ...])
-"""
-    return Labels   
+
+    return None
 
 def Visualization(MatrixAddress, Learner, Labels, dim):     #dim = 2 or 3
     """
@@ -106,10 +106,10 @@ def Labeler(Learner, MatrixAddress):    # MatrixAddress is the address of reduct
     return Labels
 
    
-      
-MatrixAddress = "Your .txt Matrix Address"
-Labels = Labeler(Learner, MatrixAddress)
-Visualization(MatrixAddress, Learner, Labels, 2)
+if __name__ == "__main__":
+    MatrixAddress = "Your .txt Matrix Address"
+    Labels = Labeler(Learner, MatrixAddress)
+    Visualization(MatrixAddress, Learner, Labels, 2)
 
 """
  Alternative way to get labels:
