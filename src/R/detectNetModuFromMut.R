@@ -15,7 +15,7 @@ plot <- args[grep("--plot=", args)]
 plot <- substr(plot, 8, nchar(plot))#plot option
 print(plot)
 #sample command line: 
-#R CMD BATCH --dir=/working/directory/ --maf=test.maf --outputPrefix=prefix --plot=T extractSNPstoMAF.R
+#R CMD BATCH --no-save --dir=/working/directory/ --maf=test.maf --outputPrefix=prefix --plot=T extractSNPstoMAF.R
 
 
 library(igraph)
