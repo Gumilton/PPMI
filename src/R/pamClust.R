@@ -18,7 +18,7 @@ outputPrefix <- args[grep("--outputPrefix=", args)]
 outputPrefix <- substr(outputPrefix, 16, nchar(outputPrefix))#output file prefix
 print(outputPrefix)
 #sample command line: 
-#R CMD BATCH --dir=/working/directory/ --no-save --mat=test.txt --k=10 --dist=pearson --consensus=T --outputPrefix=prefix pamClust.R
+#R CMD BATCH --no-save --dir=/working/directory/ --mat=test.txt --k=10 --dist=pearson --consensus=T --outputPrefix=prefix pamClust.R
 
 library(cluster)
 library(ConsensusClusterPlus)
