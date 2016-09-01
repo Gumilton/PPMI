@@ -15,6 +15,7 @@ import numpy as np
 import matplotlib.pylab as plt
 import scipy
 import sklearn
+from sklearn.cluster import AgglomerativeClustering
 
 
 
@@ -45,26 +46,23 @@ def MatrixReader(MatrixAddress):
     #Matrix = tinker(Matrix)
     return Matrix
     
-def Learner(Matrix, option = ""):    # Matrix is a numpy.ndarray, dtype = float, shape = (PatientNum, FeatureNum).
-    import numpy as np
-    import sklearn.cluster as cluster
-    from sklearn.cluster import AgglomerativeClustering
-    
-    # Parameters
-    #
-    #
-    linkages = ['ward', 'average', 'complete']
-    clustering = AgglomerativeClustering(linkage=linkages[1], n_clusters=4)
-    clustering.fit(Matrix[:,0:4])
-    """
-         We may encounter outlier issues. In this case, the outliers that may be put aside will be labeled 0.
-         Labels  is a numpy.ndarray,shape = (PatientNum, 2), dtype = int. label = (0),1,2,3,...Patient ID = 0,1,2,3,...
-         e.g Labels = np.array([[0, 1], [1, 2], [2, 2], ...])
-    """
-    PatientNum = Matrix.shape[0]
-    FeatureNum = Matrix.shape[1]
+def WardAgglLearner(Matrix, option = {}):    # Matrix is a numpy.ndarray, dtype = float, shape = (PatientNum, FeatureNum).
 
-    return np.asarray(zip(range(len(clustering.labels_)),clustering.labels_))
+    clustering = AgglomerativeClustering(linkage='ward', n_clusters=3)
+    clustering.fit(Matrix)
+    return np.asarray(zip(range(len(clustering.labels_)),clustering.labels_ + 1))
+
+def AverageAgglLearner(Matrix, option = {}):    # Matrix is a numpy.ndarray, dtype = float, shape = (PatientNum, FeatureNum).
+
+    clustering = AgglomerativeClustering(linkage='average', n_clusters=3)
+    clustering.fit(Matrix)
+    return np.asarray(zip(range(len(clustering.labels_)),clustering.labels_ + 1))
+
+def CompAggLearner(Matrix, option = {}):    # Matrix is a numpy.ndarray, dtype = float, shape = (PatientNum, FeatureNum).
+
+    clustering = AgglomerativeClustering(linkage='complete', n_clusters=3)
+    clustering.fit(Matrix)
+    return np.asarray(zip(range(len(clustering.labels_)),clustering.labels_ + 1))
 
 def Visualization(MatrixAddress, Learner, Labels, dim):     #dim = 2 or 3
     """
@@ -113,8 +111,8 @@ def Labeler(Learner, MatrixAddress):    # MatrixAddress is the address of reduct
    
 if __name__ == "__main__":
     MatrixAddress = "../Mat_Mannual_1_645_100.txt"
-    Labels = Labeler(Learner, MatrixAddress)
-    Visualization(MatrixAddress, Learner, Labels, 2)
+    Labels = Labeler(WardAgglLearner, MatrixAddress)
+    Visualization(MatrixAddress, WardAgglLearner, Labels, 2)
 
 """
  Alternative way to get labels:
