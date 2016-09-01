@@ -15,7 +15,7 @@ import numpy as np
 import matplotlib.pylab as plt
 import scipy
 import sklearn
-from sklearn.cluster import AgglomerativeClustering
+from sklearn import cluster
 
 
 
@@ -48,21 +48,27 @@ def MatrixReader(MatrixAddress):
     
 def WardAgglLearner(Matrix, option = {}):    # Matrix is a numpy.ndarray, dtype = float, shape = (PatientNum, FeatureNum).
 
-    clustering = AgglomerativeClustering(linkage='ward', n_clusters=3)
+    clustering = cluster.AgglomerativeClustering(linkage='ward', n_clusters=5)
     clustering.fit(Matrix)
     return np.asarray(zip(range(len(clustering.labels_)),clustering.labels_ + 1))
 
 def AverageAgglLearner(Matrix, option = {}):    # Matrix is a numpy.ndarray, dtype = float, shape = (PatientNum, FeatureNum).
 
-    clustering = AgglomerativeClustering(linkage='average', n_clusters=3)
+    clustering = cluster.AgglomerativeClustering(linkage='average', n_clusters=3)
     clustering.fit(Matrix)
     return np.asarray(zip(range(len(clustering.labels_)),clustering.labels_ + 1))
 
 def CompAggLearner(Matrix, option = {}):    # Matrix is a numpy.ndarray, dtype = float, shape = (PatientNum, FeatureNum).
 
-    clustering = AgglomerativeClustering(linkage='complete', n_clusters=3)
+    clustering = cluster.AgglomerativeClustering(linkage='complete', n_clusters=3)
     clustering.fit(Matrix)
     return np.asarray(zip(range(len(clustering.labels_)),clustering.labels_ + 1))
+
+def DBSCANLearner(Matrix, option = {}):    # Matrix is a numpy.ndarray, dtype = float, shape = (PatientNum, FeatureNum).
+
+    dbscan = cluster.DBSCAN(eps=.3)
+    dbscan.fit(Matrix)
+    return np.asarray(zip(range(len(dbscan.labels_)),dbscan.labels_ + 1))
 
 def Visualization(MatrixAddress, Learner, Labels, dim):     #dim = 2 or 3
     """
@@ -81,7 +87,7 @@ def Visualization(MatrixAddress, Learner, Labels, dim):     #dim = 2 or 3
     if dim == 2:
         fig = plt.figure()
         plt.scatter(Matrix[:,0], Matrix[:,1], s=s, c=Labels[:,1]/float(Labels[:,1].max()), marker='o', cmap='prism', norm=None, vmin=None, vmax=None, alpha=alpha, linewidths=None, verts=None, edgecolors=None, hold=None, data=None)
-#        plt.savefig('test.png', dpi=200,)        
+        # plt.savefig('Ward_slice100_nc5.png', dpi=200)
         plt.show()
 
     elif dim == 3:
