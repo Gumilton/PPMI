@@ -78,13 +78,13 @@ def Visualization(MatrixAddress, Learner, Labels, dim):     #dim = 2 or 3
     
     if dim == 2:
         fig = plt.figure()
-        plt.scatter(Matrix[:,0], Matrix[:,1], s=s, c=Labels[:,1]/float(Labels[:,1].max()), marker='o', cmap='jet', norm=None, vmin=None, vmax=None, alpha=alpha, linewidths=None, verts=None, edgecolors=None, hold=None, data=None)
+        plt.scatter(Matrix[:,0], Matrix[:,1], s=s, c=Labels[:,1]/float(Labels[:,1].max()), marker='o', cmap='prism', norm=None, vmin=None, vmax=None, alpha=alpha, linewidths=None, verts=None, edgecolors=None, hold=None, data=None)
 #        plt.savefig('test.png', dpi=200,)        
         
     elif dim == 3:
         fig = plt.figure()
         ax = fig.add_subplot(111, projection='3d')
-        ax.scatter(Matrix[:,0], Matrix[:,1], Matrix[:,2], s = s, c=Labels[:,1]/float(Labels[:,1].max()), marker='o', cmap='jet', norm=None, vmin=None, vmax=None, alpha=alpha)
+        ax.scatter(Matrix[:,0], Matrix[:,1], Matrix[:,2], s = s, c=Labels[:,1]/float(Labels[:,1].max()), marker='o', cmap='prism', norm=None, vmin=None, vmax=None, alpha=alpha)
 
 
 def Labeler(Learner, MatrixAddress):    # MatrixAddress is the address of reducted feature matrix .txt file
