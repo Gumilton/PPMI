@@ -71,7 +71,55 @@ def DBSCANLearner(Matrix, option = {}):    # Matrix is a numpy.ndarray, dtype = 
     dbscan = cluster.DBSCAN(eps=.3)
     dbscan.fit(Matrix)
     return np.asarray(zip(range(len(dbscan.labels_)),dbscan.labels_ + 1))
+    
+def Birch_Learner(Matrix):    # Matrix is a numpy.ndarray, dtype = float, shape = (PatientNum, FeatureNum).
+    import numpy as np
+    import sklearn.cluster as cluster 
+    
+    # Parameters
+    #
+    #
+    
+    PatientNum = Matrix.shape[0]
+    FeatureNum = Matrix.shape[1]
+    
+    B_Learner = cluster.Birch(threshold=0.001, branching_factor=100, n_clusters=30, compute_labels=True, copy=True)
+    Labels = B_Learner.fit_predict(Matrix)
+    temp = np.zeros((PatientNum,2), dtype = int)
+    for i in xrange(PatientNum):
+        temp[i,0] = i
+        temp[i,1] = Labels[i] + 1
+    Labels = temp
+    return Labels
 
+def SC_Learner(Matrix):    # Matrix is a numpy.ndarray, dtype = float, shape = (PatientNum, FeatureNum).
+    import numpy as np
+    import sklearn.cluster as cluster 
+    
+    # Parameters
+    n_clusters = 5
+    gamma = 4.0
+    
+    
+    PatientNum = Matrix.shape[0]
+    FeatureNum = Matrix.shape[1]
+    SC_Learner = cluster.SpectralClustering(n_clusters=n_clusters, eigen_solver='arpack', random_state=np.random.randint(10,10000), n_init=50, gamma=gamma, affinity='nearest_neighbors', n_neighbors=10, eigen_tol=1e-6, assign_labels='kmeans', degree=3, coef0=1, kernel_params=None) # nearest_neighbors
+#    SC_Learner.fit(Matrix)
+#    global AMat
+#    AMat = SC_Learner.affinity_matrix_
+    Labels = SC_Learner.fit_predict(Matrix)
+    temp = np.zeros((PatientNum,2), dtype = int)
+    for i in xrange(PatientNum):
+        temp[i,0] = i
+        temp[i,1] = Labels[i] + 1
+    Labels = temp
+    
+    # We may encounter outlier issues. In this case, the outliers that may be put aside will be labeled 0.
+    # Labels  is a numpy.ndarray,shape = (PatientNum, 2), dtype = int. label = (0),1,2,3,...Patient ID = 0,1,2,3,...
+    # e.g Labels = np.array([[0, 1], [1, 2], [2, 2], ...])
+    return Labels
+ 
+ 
 def Visualization(MatrixAddress, Learner, Labels, dim):     #dim = 2 or 3
     """
     Visualization method
