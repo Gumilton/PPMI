@@ -26,10 +26,10 @@ bipartite <- graph.data.frame(bipartite, directed = F)
 #build bipartite graph
 modularity <- function(x, method){
   switch (method,
-          edgeBetweenness = edge.betweenness.community(bipartite, weights = NULL),
-          fastgreedy = fastgreedy.community(bipartite, weights = NULL),
-          spinglass = spinglass.community(bipartite, weights = NULL),#conected graph only
-          walktrap = walktrap.community(bipartite, weights = NULL))}
+          edgeBetweenness = edge.betweenness.community(x, weights = NULL),
+          fastgreedy = fastgreedy.community(x, weights = NULL),
+          spinglass = spinglass.community(x, weights = NULL),#conected graph only
+          walktrap = walktrap.community(x, weights = NULL))}
 mod <- modularity(bipartite, method)
 save(bipartite, mod, file = paste(dir, outputPrefix, ".rda", sep = ""))
 #determine modularity
