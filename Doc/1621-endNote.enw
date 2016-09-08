@@ -1,0 +1,22 @@
+	
+%A Lê, Sébastien
+%A Josse, Julie
+%A Husson, François
+%D 2008
+%T FactoMineR: An R Package for Multivariate Analysis
+%B 2008
+%9 
+%! FactoMineR: An R Package for Multivariate Analysis
+%K 
+%X In this article, we present  FactoMineR  an R package dedicated to multivariate data analysis. The main features of this package is the possibility to take into account different types of variables (quantitative or categorical), different types of structure on the data (a partition on the variables, a hierarchy on the variables, a partition on the individuals) and finally supplementary information (supplementary individuals and variables). Moreover, the dimensions issued from the different exploratory data analyses can be automatically described by quantitative and/or categorical variables. Numerous graphics are also available with various options. Finally, a graphical user interface is implemented within the  Rcmdr  environment in order to propose an user friendly package.
+%U https://www.jstatsoft.org/index.php/jss/article/view/v025i01
+%0 Journal Article
+%R 10.18637/jss.v025.i01
+%& 1
+%P 18
+%J Journal of Statistical Software
+%V 25
+%N 1
+%@ 1548-7660
+%8 2008-03-18
+%7 2008-03-18
